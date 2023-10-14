@@ -1,0 +1,46 @@
+body {
+    background: #B2B6CF;
+    background: repeating-radial-gradient(circle farthest-corner at center center, #B2B6CF 0%, #595959 100%);
+
+}
+
+.tarjeta {
+    background: #F6F8F9;
+background: radial-gradient(circle farthest-corner at center center, #F6F8F9 0%, #E5EBEE 30%, #D7DEE3 60%, #F5F7F9 100%);
+    border-color: black;
+    border-radius: 15px;
+    box-shadow: 7px 5px 15px 0px #000000;
+}
+
+.codigo {
+    background-color: black;
+    color: white;
+        border-radius: 15px;
+
+}
+
+
+#btn-regresar-arriba {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    font-size: 32px;
+    width: 60px; /* Establecer el ancho del botón */
+    border-radius: 50%;
+  }
+  
+  #btn-regresar-arriba.show {
+    display: block;
+  }
+
+  #demotext {
+    color: #FFFFFF;
+    font-size: 8vh;
+    text-shadow: 3px 5px 2px #474747;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  #demotext:hover {
+    transform: scale(1.2);
+  }
