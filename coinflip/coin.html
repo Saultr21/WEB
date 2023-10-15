@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip A Coin</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="d-flex align-items-center min-vh-100">
+    <div class="container mx-auto text-right border">
+        <div class="stats my-3">
+            <p id="heads-count" class="mb-0 font-weight-bold">Cara: 0</p>
+            <p id="tails-count" class="mb-0 font-weight-bold">Cruz: 0</p>
+            <p id="user-score" class="mb-0 font-weight-bold">Victorias: 0</p>
+        </div>
+        <div class="container border d-flex justify-content-center">
+            <h3>Elige tu moneda</h3>
+        </div>
+        <div class="container border d-flex justify-content-center mt-4 mb-3">
+            <div>
+                <button class="btn cara-btn"><img src="./media/cara_moneda.png" style="max-width: 100px;"></button>
+                <button class="btn cruz-btn"><img src="./media/cruz_moneda.png" style="max-width: 100px;"></button>
+            </div>
+        </div>
+
+
+        <div class="coin mx-auto position-relative mb-5" id="coin" style="display:none;">
+            <div class="heads position-absolute ">
+                <img src="./media/cara_moneda.png" class="w-100">
+            </div>
+            <div class="tails position-absolute">
+                <img src="./media/cruz_moneda.png" class="w-100">
+            </div>
+        </div>
+        <p id="game-status" class="text-center"></p>
+        <div class="buttons d-flex justify-content-center">
+            <button id="flip-button" class="btn btn-primary p-2 m-3">
+                Lanzar moneda
+            </button>
+        </div>
+        <div class="buttons d-flex justify-content-center">
+            <button id="reset-button" class="btn btn-outline-primary p-2 m-3">
+                Resetear
+            </button>
+        </div>
+    </div>
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
