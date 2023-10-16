@@ -7,69 +7,66 @@ function ver_code(elementId, button) {
         switch (elementId) {
             case 'UT3.1_1':
                 demoElement.innerText =
-`let cadena1 = "Hola, ";
-let cadena2 = "Mundo!";
-
-let resultado = cadena1 + cadena2;
-
-console.log(resultado);
-document.write(resultado);`;
-                break;
-            case 'UT2.1_2':
-                demoElement.innerText = `// Declara variables sin inicializar
-let variable1;
-let variable2;
-let variable3;
+`function capturarResultado() {
+    let userAnswer = document.getElementById("userInput").value;
+    let correct = verificarResultado(Number(userAnswer));
     
-// tipo de las variables sin inicializar
-let tipoVariable1 = typeof variable1;
-let tipoVariable2 = typeof variable2;
-let tipoVariable3 = typeof variable3;
-    
-document.write("variable1 sin inicializar: " + tipoVariable1 + "<br>");
-document.write("variable2 sin inicializar: " + tipoVariable2 + "<br>");
-document.write("variable3 sin inicializar: " + tipoVariable3 + "<br>");
-    
-// Inicializa las variables con valores
-variable1 = "Hola, mundo!";
-variable2 = 42;
-variable3 = true;
-    
-tipoVariable1 = typeof variable1;
-tipoVariable2 = typeof variable2;
-tipoVariable3 = typeof variable3;
-    
-document.write("variable1 después de la inicialización: " + tipoVariable1 + "<br>");
-document.write("variable2 después de la inicialización: " + tipoVariable2 + "<br>");
-document.write("variable2 después de la inicialización: " + tipoVariable3 + "<br>");`
-                break;
-            // Agrega más casos según sea necesario para otros ejercicios
-            case 'UT2.1_3':
-                demoElement.innerText = `let numero1;
-let numero2;
-    
-numero1 = parseInt(prompt("Introduce el primer numero"));
-numero2 = parseInt(prompt("Introduce el segundo numero"));
-    
-if (!isNaN(numero1) && !isNaN(numero2)){
-    if (numero1 == numero2) {
-        alert(numero1 + " Es igual que " + numero2);
-    }
-    if (numero1 < numero2) {
-        alert(numero1 + " Es menor que " + numero2);
-    }
-    if (numero1 > numero2) {
-        alert(numero1 + " Es mayor que " + numero2);
+    if (correct) {
+        document.getElementById("output").innerText = "¡Correcto!";
+    } else {
+        document.getElementById("output").innerText = "Incorrecto. Inténtalo de nuevo.";
     }
 }
-else {
-    if (isNaN(numero1)) {
-        alert("El primer dato no es un número");
+
+function verificarResultado(answer) {
+    const correctAnswer = 5 + 3;
+    if (answer === correctAnswer) {
+        return true;
+    } else {
+        return false;
     }
-    if (isNaN(numero2)) {
-        alert("El segundo dato no es un número");
+}`;
+                break;
+            case 'UT3.1_2':
+                demoElement.innerText = 
+`function incrementarNumero() {
+    let numeroActual = parseInt(document.getElementById("resultado").innerText);
+    let numeroIncrementado = numeroActual + 1;
+    document.getElementById("resultado").innerText = numeroIncrementado;
+}`
+                    break;
+            case 'UT3.1_3':
+                demoElement.innerText = 
+`function procesarValores() {
+    let a = parseFloat(document.getElementById('numero1').value);
+    let b = parseFloat(document.getElementById('numero2').value);
+    if (a > b) {
+        alert("El primer valor es mayor que el segundo");
+    } else {
+        document.getElementById("output2").innerText = "La suma de los valores es: " + (a + b);
     }
 }`
+                break;
+            // Agrega más casos según sea necesario para otros ejercicios
+            case 'UT3.1_4':
+                demoElement.innerText = 
+`function addNumbers(){
+    firstNum = 4;
+    secondNum = 8;
+    result = firstNum + secondNum;
+    return result;
+}
+
+result = 0;
+
+// Mostrar el valor de 'result' antes de llamar a 'addNumbers'
+alert("Valor de 'result' antes de llamar a 'addNumbers': " + result);
+
+sum = addNumbers();
+
+// Mostrar el valor de 'result' después de llamar a 'addNumbers'
+alert("Valor de 'result' después de llamar a 'addNumbers': " + result);
+`
                 break;
                 case 'UT2.1_4':
                 demoElement.innerText = `<script>

@@ -7,7 +7,7 @@
   <title>DEW</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="../../../CSS/estilos.css">
+  <link rel="stylesheet" href="/CSS/estilos.css">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
@@ -17,14 +17,15 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-  <script src="../../../Funciones/ver_code_UT3_1.js"></script>
+  <script src="/Funciones/ver_code_UT3_1.js"></script>
+  <script src="./funciones.js"></script>
 </head>
 
 <div id="header-container"></div>
 <script>
   // Cargar el encabezado usando JavaScript
   const headerContainer = document.getElementById("header-container");
-  const headerURL = "../../../Partes/header.html";
+  const headerURL = "/Partes/header.html";
   fetch(headerURL)
     .then(response => response.text())
     .then(data => {
@@ -35,65 +36,85 @@
   <section id="seccion1" class="card mb-4 tarjeta">
     <div class="card-body">
       <h2 class="card-title">Ejercicio 1</h2>
-      <p class="card-text"> -
+      <p class="card-text"> Realizar un programa que solicite al usuario el resultado de
+        una operación aritmética dada. Utilizar dos funciones. La primera captura el
+        resultado introducido por el usuario e invoca otra función que verifica si el
+        resultado es correcto. En esta segunda función utilizaremos return para devolver el
+        resultado.
       </p>
+      <p>¿Cuánto es 5 + 3?</p>
+      <input type="text" id="userInput">
+      <button onclick="capturarResultado()">Verificar</button><br>
+      <p id="output"></p>
       <pre>
       <p class="codigo p-3 mb-4" id="UT3.1_1" style="display: none"></p>
       </pre>
-      <a href="../../../UNIDADES/UT2/Ejercicios 1/Ejercicio 1.html" target="_blank"
-        class="btn btn-primary float-right">Abrir ejercicio</a>
       <button class="btn btn-primary float-right mr-4" onclick="ver_code('UT3.1_1', this)">Mostrar código</button>
 
     </div>
   </section>
-  <section id="seccion1" class="card mb-4 tarjeta">
+  <section id="seccion2" class="card mb-4 tarjeta">
     <div class="card-body">
       <h2 class="card-title">Ejercicio 2</h2>
-      <p class="card-text">-</p>
+      <p class="card-text">Define una funcion que acoja un argumento numérico, incremente ese argumento y 
+        que después lo devuelva al emisor de la llamada. Invoque esa función desde la sección &lt;body&gt; de una página y muestra el resultado en pantalla</p>
+      <p id="resultado">0</p>
+      <button onclick="incrementarNumero()">Incrementar</button>
       <pre>
-      <p class="codigo p-3 mb-4" id="UT3.1_2" style="display: none"></p>
-    </pre>
-      <a href="../../../UNIDADES/UT2/Ejercicios 1/Ejercicio 2.html" target="_blank"
-        class="btn btn-primary float-right">Abrir ejercicio</a>
+          <p class="codigo p-3 mb-4" id="UT3.1_2" style="display: none"></p>
+        </pre>
       <button class="btn btn-primary float-right mr-4" onclick="ver_code('UT3.1_2', this)">Mostrar código</button>
     </div>
   </section>
-  <section id="seccion1" class="card mb-4 tarjeta">
+  <section id="seccion3" class="card mb-4 tarjeta">
     <div class="card-body">
       <h2 class="card-title">Ejercicio 3</h2>
-      <p class="card-text">- </p>
-        <pre>
+      <p class="card-text">Define una funcion que acepte dos parámetros numéricos. Si el valor del primer parámetro es mayor que el segundo muestra al usuario una alerta. 
+        Si el valor del primer parámetro es menor o igual que el segundo, devuelve la suma de ambos</p>
+    <input type="number" id="numero1" placeholder="Primer número">
+    <input type="number" id="numero2" placeholder="Segundo número">
+    <button onclick="procesarValores()">Comparar y sumar</button>
+    <p id="output2"></p>
+    <pre>
       <p class="codigo p-3 mb-4" id="UT3.1_3" style="display: none"></p>
     </pre>
-      <a href="../../../UNIDADES/UT2/Ejercicios 1/Ejercicio 3.html" target="_blank"
-        class="btn btn-primary float-right">Abrir ejercicio</a>
       <button class="btn btn-primary float-right mr-4" onclick="ver_code('UT3.1_3', this)">Mostrar código</button>
     </div>
   </section>
-  <section id="seccion1" class="card mb-4 tarjeta">
+  <section id="seccion4" class="card mb-4 tarjeta">
     <div class="card-body">
       <h2 class="card-title">Ejercicio 4</h2>
-      <p class="card-text">-</p>
+      <p class="card-text">Añade las funciones alert() adecuadas al siguiente código, de manera que pueda ver el valor en la variable result, antes y después de la llamada a la función
         <pre>
-          <p class="codigo p-3 mb-4" id="UT3.1_4" style="display: none"></p>
-        </pre>
-      <a href="../../../UNIDADES/UT2/Ejercicios 1/Ejercicio 4.html" target="_blank"
-        class="btn btn-primary float-right">Abrir ejercicio</a>
-        <button class="btn btn-primary float-right mr-4" onclick="ver_code('UT3.1_4', this)">Mostrar código</button>
+function addNumbers(){
+  firstNum = 4;
+  secondNum = 8;
+  result = firstNum + secondNum;
+  return result;
+}
+  result = 0;
+  sum = addNumbers();</pre>
+      </p>
+      <script>result=0</script>
+      <button onclick="alert('Valor de result antes de llamar a addNumbers: ' + result)">Antes de llamar a la función</button>
+      <button onclick="addNumbers(); alert('Valor de result después de llamar a addNumbers: ' + result)">Después de llamar a la función</button>
+      <pre>
+      <p class="codigo p-3 mb-4" id="UT3.1_4" style="display: none"></p>
+    </pre>
+      <button class="btn btn-primary float-right mr-4" onclick="ver_code('UT3.1_4', this)">Mostrar código</button>
     </div>
   </section>
-  <section id="seccion1" class="card mb-4 tarjeta">
+  <section id="seccion5" class="card mb-4 tarjeta">
     <div class="card-body">
       <h2 class="card-title">Ejercicio 5</h2>
       <p class="card-text">-</p>
-        <pre>
+      <pre>
           <p class="codigo p-3 mb-4" id="UT3.1_5" style="display: none"></p>
         </pre>
-      <a href="../../../UNIDADES/UT2/Ejercicios 1/Ejercicio 5.html" target="_blank"
-        class="btn btn-primary float-right">Abrir ejercicio</a>
-        <button class="btn btn-primary float-right mr-4" onclick="ver_code('UT3.1_5', this)">Mostrar código</button>
+      <button class="btn btn-primary float-right mr-4" onclick="ver_code('UT3.1_5', this)">Mostrar código</button>
     </div>
   </section>
+  
 </main>
 <button class="material-icons" id="btn-regresar-arriba">&#8593</button>
 <script>  const btnRegresarArriba = document.getElementById("btn-regresar-arriba");
