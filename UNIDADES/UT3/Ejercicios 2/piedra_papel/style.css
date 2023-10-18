@@ -1,0 +1,84 @@
+.container {
+    background: #F6F8F9;
+    background: radial-gradient(circle farthest-corner at center center, #F6F8F9 0%, #E5EBEE 30%, #D7DEE3 60%, #F5F7F9 100%);
+        border-color: black;
+        border-radius: 15px;
+        box-shadow: 7px 5px 15px 0px #000000;
+}
+
+::selection {
+  color: #fff;
+  background-color: #7d2ae8;
+}
+
+.result_images {
+  display: flex;
+  column-gap: 7rem;
+}
+
+.result_images img {
+  width: 100px;
+  height: 100px;
+}
+.user_result img {
+  transform: rotate(90deg);
+}
+.cpu_result img {
+  transform: rotate(-90deg) rotateY(180deg);
+}
+
+.option_image img {
+  width: 50px;
+  height: 50px;
+}
+.option_images {
+  display: flex;
+  align-items: center;
+  margin-top: 2.5rem;
+  justify-content: center;
+  padding: 30px;
+}
+.container.start .option_images {
+  pointer-events: none;
+}
+.option_image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  padding: 50px;
+  
+}
+
+.option_image input[type="radio"] {
+    appearance: none;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .option_image input[type="radio"] + img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+.option_image:hover {
+  opacity: 1;
+}
+.option_image.active {
+  opacity: 1;
+}
+.option_image img {
+  pointer-events: none;
+}
+.option_image p {
+  color: black;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  pointer-events: none;
+}
