@@ -17,7 +17,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-  <script src="/Funciones/ver_code_UT3_1.js"></script>
+  <script src="/Funciones/ver_code_UT3_2.js"></script>
+  <script src="funciones.js"></script>
 </head>
 
 <div id="header-container"></div>
@@ -35,7 +36,9 @@
   <section id="seccion1" class="card mb-4 tarjeta">
     <div class="card-body">
       <h2 class="card-title">Ejercicio 1</h2>
-      <p class="card-text"> Moneda
+      <p class="card-text">Simular el lanzamiento de una moneda al aire generando un número aleatorio que varíe entre 0 y 1. Para 
+        dar más sensación de realidad hacer que la imagen de la moneda cambie 6 veces antes de presentar la 
+        imagen de la parte de la moneda escogida. 
       </p>
       <a href="/UNIDADES/UT3/Ejercicios 2/coinflip/coin.html" target="_blank"
         class="btn btn-primary float-right">Abrir ejercicio</a>
@@ -43,47 +46,56 @@
 
     </div>
   </section>
-  <section id="seccion1" class="card mb-4 tarjeta">
+  <section id="seccion2" class="card mb-4 tarjeta">
     <div class="card-body">
       <h2 class="card-title">Ejercicio 2</h2>
-      <p class="card-text">Piedra, papel o tijera</p>
+      <p class="card-text">El usuario elegirá su opción en un grupo de radio botones (input type="radio") y la máquina 
+        generando un número aleatorio entre 0 y 2. Para dar más sensación de realidad hacer que la imagen 
+        correspondiente a la opción elegida por la máquina cambie 20 veces antes de presentar opción 
+        seleccionada.
+        El programa indicará si gana el usuario, la máquina o si existe un empate</p>
       <a href="/UNIDADES/UT3/Ejercicios 2/piedra_papel/piedra_papel.html" target="_blank"
         class="btn btn-primary float-right">Abrir ejercicio</a>
     </div>
   </section>
-  <section id="seccion1" class="card mb-4 tarjeta">
+  <section id="seccion3" class="card mb-4 tarjeta">
     <div class="card-body">
       <h2 class="card-title">Ejercicio 3</h2>
-      <p class="card-text">- </p>
-        <pre>
-      <p class="codigo p-3 mb-4" id="UT3.1_3" style="display: none"></p>
+      <p class="card-text">Calcular a través de la función denominada Factorial() el factorial de un número que se introduce 
+        por teclado. Se controlará que los caracteres introducidos sean numéricos y que correspondan a un 
+        entero que no es negativo.  </p>
+      <span>Introduce 0 o un número positivo</span><br>
+      <span>Número </span><input class="mt-3" type="number" id="numFact"><br>
+      <span>Factorial </span><input class="mt-3" type="number" id="resultFact" disabled><br>
+      <button class="mt-4 mb-4" onclick="factorial()">Calcular factorial</button>
+      <pre>
+      <p class="codigo p-3 mb-4" id="UT3.2_3" style="display: none"></p>
     </pre>
-      <a href="../../../UNIDADES/UT2/Ejercicios 1/Ejercicio 3.html" target="_blank"
-        class="btn btn-primary float-right">Abrir ejercicio</a>
-      <button class="btn btn-primary float-right mr-4" onclick="ver_code('UT3.1_3', this)">Mostrar código</button>
+      <button class="btn btn-primary float-right mr-4" onclick="ver_code('UT3.2_3', this)">Mostrar código</button>
     </div>
   </section>
-  <section id="seccion1" class="card mb-4 tarjeta">
+  <section id="seccion4" class="card mb-4 tarjeta">
     <div class="card-body">
       <h2 class="card-title">Ejercicio 4</h2>
-      <p class="card-text">-</p>
+      <p class="card-text">Diseñar la función Intercambiar(numero1, numero2) para hacer el intercambio de dos números 
+        introducidos por teclado pasando los argumentos por valor y por referencia. </p>
+      <span>Número 1 </span><input class="mt-3" type="number" id="num1"><br>
+      <span>Número 2 </span><input class="mt-3" type="number" id="num2"><br>
+      <button class="mt-4 mb-4" onclick="interValor()">Intercambiar por valor</button><br>
+      <button class="mb-4" onclick="interReferencia()">Intercambiar por referencia</button>
         <pre>
-          <p class="codigo p-3 mb-4" id="UT3.1_4" style="display: none"></p>
+          <p class="codigo p-3 mb-4" id="UT3.2_4" style="display: none"></p>
         </pre>
-      <a href="../../../UNIDADES/UT2/Ejercicios 1/Ejercicio 4.html" target="_blank"
-        class="btn btn-primary float-right">Abrir ejercicio</a>
-        <button class="btn btn-primary float-right mr-4" onclick="ver_code('UT3.1_4', this)">Mostrar código</button>
+        <button class="btn btn-primary float-right mr-4" onclick="ver_code('UT3.2_4', this)">Mostrar código</button>
     </div>
   </section>
-  <section id="seccion1" class="card mb-4 tarjeta">
+  <section id="seccion5" class="card mb-4 tarjeta">
     <div class="card-body">
       <h2 class="card-title">Ejercicio 5</h2>
       <p class="card-text">-</p>
         <pre>
           <p class="codigo p-3 mb-4" id="UT3.1_5" style="display: none"></p>
         </pre>
-      <a href="../../../UNIDADES/UT2/Ejercicios 1/Ejercicio 5.html" target="_blank"
-        class="btn btn-primary float-right">Abrir ejercicio</a>
         <button class="btn btn-primary float-right mr-4" onclick="ver_code('UT3.1_5', this)">Mostrar código</button>
     </div>
   </section>

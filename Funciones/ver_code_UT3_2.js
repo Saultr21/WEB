@@ -4,46 +4,43 @@ function ver_code(elementId, button) {
 
     if (demoElement.textContent.trim() === "") {
         switch (elementId) {
-            case 'UT3.1_1':
+            case 'UT3.2_3':
                 demoElement.innerText =
-`function capturarResultado() {
-    let userAnswer = document.getElementById("userInput").value;
-    let correct = verificarResultado(Number(userAnswer));
-    
-    if (correct) {
-        document.getElementById("output").innerText = "¡Correcto!";
+`function factorial() {
+    var numFact = document.getElementById("numFact").value;
+    var resultado = 1;
+    if (isNaN(numFact) || numFact < 0 || numFact % 1 != 0) {
+        alert("El número introducido no es válido");
     } else {
-        document.getElementById("output").innerText = "Incorrecto. Inténtalo de nuevo.";
-    }
-}
-
-function verificarResultado(answer) {
-    const correctAnswer = 5 + 3;
-    if (answer === correctAnswer) {
-        return true;
-    } else {
-        return false;
+        for (var i = 1; i <= numFact; i++) {
+            resultado *= i;
+        }
+        document.getElementById("resultFact").value = resultado;
     }
 }`;
                 break;
-            case 'UT3.1_2':
+            case 'UT3.2_4':
                 demoElement.innerText = 
-`function incrementarNumero() {
-    let numeroActual = parseInt(document.getElementById("resultado").innerText);
-    let numeroIncrementado = numeroActual + 1;
-    document.getElementById("resultado").innerText = numeroIncrementado;
-}`
-                    break;
-            case 'UT3.1_3':
-                demoElement.innerText = 
-`function procesarValores() {
-    let a = parseFloat(document.getElementById('numero1').value);
-    let b = parseFloat(document.getElementById('numero2').value);
-    if (a > b) {
-        alert("El primer valor es mayor que el segundo");
-    } else {
-        document.getElementById("output2").innerText = "La suma de los valores es: " + (a + b);
-    }
+`function interValor() {
+    let num1 = document.getElementById('num1');
+    let num2 = document.getElementById('num2');
+
+    let temp = num1.value;
+    num1.value = num2.value;
+    num2.value = temp;
+}
+
+
+function interReferencia() {
+    let num1Obj = { value: parseFloat(document.getElementById('num1').value) };
+    let num2Obj = { value: parseFloat(document.getElementById('num2').value) };
+
+    let temp = num1Obj.value;
+    num1Obj.value = num2Obj.value;
+    num2Obj.value = temp;
+
+    document.getElementById('num1').value = num1Obj.value;
+    document.getElementById('num2').value = num2Obj.value;
 }`
                 break;
             // Agrega más casos según sea necesario para otros ejercicios

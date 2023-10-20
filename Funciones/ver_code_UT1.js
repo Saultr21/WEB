@@ -1,8 +1,8 @@
 function ver_code(elementId, button) {
-    // Obtener el elemento <p> por su ID
+
     var demoElement = document.getElementById(elementId);
 
-    // Cambiar el contenido del elemento <p> según el ID
+
     if (demoElement.textContent.trim() === "") {
         switch (elementId) {
             case 'UT1_1':
