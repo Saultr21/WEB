@@ -43,129 +43,43 @@ function interReferencia() {
     document.getElementById('num2').value = num2Obj.value;
 }`
                 break;
-            // Agrega más casos según sea necesario para otros ejercicios
-            case 'UT3.1_4':
+            case 'UT3.2_5':
                 demoElement.innerText = 
-`function addNumbers(){
-    firstNum = 4;
-    secondNum = 8;
-    result = firstNum + secondNum;
-    return result;
-}
-
-result = 0;
-
-// Mostrar el valor de 'result' antes de llamar a 'addNumbers'
-alert("Valor de 'result' antes de llamar a 'addNumbers': " + result);
-
-sum = addNumbers();
-
-// Mostrar el valor de 'result' después de llamar a 'addNumbers'
-alert("Valor de 'result' después de llamar a 'addNumbers': " + result);
-`
+`function informacion(nombre, localidad = "LAS PALMAS DE G.C.", valor = 100) {
+    let valores = "";
+    valores = "\${nombre}, \${localidad}, \${valor}";
+    document.getElementById("info").value = valores;
+  }`
                 break;
-                case 'UT2.1_4':
-                demoElement.innerText = `<script>
-    let contenido;
-    contenido = prompt("Introduce algo");
-    if (contenido === null || contenido === "") {
-        document.write("Hola");
+                case 'UT3.2_6':
+                demoElement.innerText = `
+function factorialRecur() {
+    var numFact = document.getElementById("numFactRecur").value;
+    numFact = parseInt(numFact, 10);
+  
+    function factorial(num) {
+      if (num < 0 || num % 1 !== 0) {
+        return null;
+      } else if (num === 0 || num === 1) {
+        return 1;
+      } else {
+        return num * factorial(num - 1);
+      }
+    }
+    if (isNaN(numFact)) {
+      alert("El número introducido no es válido");
     } else {
-     document.write(contenido);
+      var resultado = factorial(numFact);
+      if (resultado !== null) {
+        document.getElementById("resultFactRecur").value = resultado;
+      } else {
+        alert("El número introducido no es válido");
+      }
     }
-</script>`
+  }`
                 break;
-                case 'UT2.1_5':
-                demoElement.innerText = `<script>
-    let N1, N2;
-    N1 = parseInt(prompt("Primer número", ""));
-    N2 = parseInt(prompt("Segundo número", ""));
-    (N1 > N2 ? document.write(N1 + " > " + N2) : document.write(N2 + " > " + N1));
-</script>`
-                break;
-                case 'UT2.1_6':
-                demoElement.innerText = `<script>
-    let contador;
-    for(contador = 1; contador <= 6; contador++) {
-        document.write("<h\${contador}>Encabezado de nivel \${contador}</h\${contador}>"); 
-    }
-</script>`
-                break;
-                case 'UT2.1_7':
-                demoElement.innerText = `<script>
-    let contador = 1;
-    while (contador < 7) {
-        document.write("<h\${contador}>Encabezado de nivel \${contador}</h\${contador}>");
-        contador++;
-    }
-</script>`
-                break;
-        
-                case 'UT2.1_8':
-                demoElement.innerText = `<script>
-    let valor = parseInt(prompt("Introduzca un número: "));
-    let cont;
-    for (cont = 0; cont <= valor; cont++) {
-      document.write(cont + "<br>");
-    }
-        
-    document.write("--------------------------------<br>")
-        
-    for (cont = valor; cont >= 0; cont--) {
-        document.write(cont + "<br>");
-    } 
-</script>`
-                break;
-        
-                case 'UT2.1_9':
-                demoElement.innerText = `<script>
-    let valor = parseInt(prompt("Introduzca un número: "));
-    let cont = 0;
-    while (cont <= valor) {
-        document.write(cont + "<br>");
-        cont++;
-    }
-        
-    document.write("--------------------------------<br>")
-        
-    while (valor >= 0) {
-        document.write(valor + "<br>");
-        valor--;
-    }
-</script>`
-                break;
-        
-                case 'UT2.1_10':
-                demoElement.innerText = `<script>
-    for (let i = 1; i <= 50; i++) {
-        let str = '';
-        for (let j = 1; j <= i; j++) {
-            str += i;
-        }
-        document.write(str + "<br>");
-    }
-</script>`
-                break;
-        
-                case 'UT2.1_11':
-                demoElement.innerText = `<script>
-    let piramide = "";
-    for (let i = 1; i <= 50; i++) {
-        let fila = "";
-        for (let j = 1; j <= i; j++) {
-            fila += j;
-            if (j < i) {
-                fila += " ";
-            }
-        }
-        piramide += fila + "<br>";
-    }
-    document.write(piramide);
-</script>`
-                break;
-        
-        }
-    }
+}
+}         
 
     // Cambiar el texto del botón y mostrar u ocultar el contenido
     if (demoElement.style.display === "none") {
@@ -176,11 +90,3 @@ alert("Valor de 'result' después de llamar a 'addNumbers': " + result);
         button.textContent = "Mostrar código";
     }
 }
-
-
-
-
-
-
-
-

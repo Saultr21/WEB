@@ -92,11 +92,31 @@
   <section id="seccion5" class="card mb-4 tarjeta">
     <div class="card-body">
       <h2 class="card-title">Ejercicio 5</h2>
-      <p class="card-text">-</p>
+      <p class="card-text">Realizar la función Informacion(nombre, localidad, valor) haciendo que los dos últimos 
+        argumentos tengan los siguiente valores por defecto LAS PALMAS DE G.C. y 100. </p>
+        <p>Pulse la opción deseada y observe los cambios</p>
+        <span>Información </span><input class="mt-3" type="text" id="info" size="30" disabled><br>
+        <button class="mt-4 mb-4" onclick="informacion('Pepe','Madrid','23.45')">Información ("Pepe","Madrid",23.45)</button><br>
+        <button class="mb-4" onclick="informacion('Pepe','Madrid')">Información ("Pepe","Madrid")</button><br>
+        <button class="mb-4" onclick="informacion('Pepe')">Información ("Pepe")</button><br>
         <pre>
-          <p class="codigo p-3 mb-4" id="UT3.1_5" style="display: none"></p>
+          <p class="codigo p-3 mb-4" id="UT3.2_5" style="display: none"></p>
         </pre>
-        <button class="btn btn-primary float-right mr-4" onclick="ver_code('UT3.1_5', this)">Mostrar código</button>
+        <button class="btn btn-primary float-right mr-4" onclick="ver_code('UT3.2_5', this)">Mostrar código</button>
+    </div>
+  </section>
+  <section id="seccion6" class="card mb-4 tarjeta">
+    <div class="card-body">
+      <h2 class="card-title">Ejercicio 6</h2>
+      <p class="card-text">Repetir el cálculo del factorial, esta vez, a través de una función recursiva.</p>
+      <span>Introduce 0 o un número positivo</span><br>
+      <span>Número </span><input class="mt-3" type="number" id="numFactRecur"><br>
+      <span>Factorial </span><input class="mt-3" type="number" id="resultFactRecur" disabled><br>
+      <button class="mt-4 mb-4" onclick="factorialRecur()">Calcular factorial</button>
+      <pre>
+      <p class="codigo p-3 mb-4" id="UT3.2_6" style="display: none"></p>
+    </pre>
+      <button class="btn btn-primary float-right mr-4" onclick="ver_code('UT3.2_6', this)">Mostrar código</button>
     </div>
   </section>
 </main>

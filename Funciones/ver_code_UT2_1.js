@@ -43,7 +43,6 @@ document.write("variable1 después de la inicialización: " + tipoVariable1 + "<
 document.write("variable2 después de la inicialización: " + tipoVariable2 + "<br>");
 document.write("variable2 después de la inicialización: " + tipoVariable3 + "<br>");`
                 break;
-            // Agrega más casos según sea necesario para otros ejercicios
             case 'UT2.1_3':
                 demoElement.innerText = `let numero1;
 let numero2;

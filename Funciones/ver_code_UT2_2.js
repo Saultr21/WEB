@@ -58,7 +58,6 @@ while (numeroUsuario !== null && parseInt(numeroUsuario) !== numeroAleatorio && 
         alert(\`Lo siento, no adivinaste el número en \${intentos} intentos. El número era \${numeroAleatorio}.\`);
             }}`
                 break;
-            // Agrega más casos según sea necesario para otros ejercicios
             case 'UT2.2_3':
                 demoElement.innerText = `function generarNumeros(){
 //Con Set evitamos que se guarden numeros repetidos ya que no lo permite

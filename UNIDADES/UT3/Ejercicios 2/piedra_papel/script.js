@@ -9,11 +9,11 @@ const gameContainer = document.querySelector(".container"),
 let victorias = 0;
 let animationInProgress = false;
 
-function rotateImages(element, imagesArray, count) {
+function rotarImages(element, imagesArray, count) {
   element.src = imagesArray[count % imagesArray.length];
 }
 
-function determineWinner(userChoice, cpuChoice) {
+function ganador(userChoice, cpuChoice) {
   const outcome = (3 + userChoice - cpuChoice) % 3;
 
   switch (outcome) {
@@ -39,7 +39,7 @@ resetButton.addEventListener('click', () => {
   userResult.src = "./media/piedra.png"; // Volvemos a la imagen por defecto
   cpuResult.src = "./media/piedra.png";  // Volvemos a la imagen por defecto
 
-  // Si quieres también puedes remover la clase 'active' de todas las imágenes
+
   optionImages.forEach(image => {
     image.classList.remove("active");
   });
@@ -67,8 +67,8 @@ optionImages.forEach((image, index) => {
 
     let count = 0;
     let interval = setInterval(() => {
-      rotateImages(userResult, cpuImages, count);
-      rotateImages(cpuResult, cpuImages, count);
+      rotarImages(userResult, cpuImages, count);
+      rotarImages(cpuResult, cpuImages, count);
       count++;
 
       if (count >= 30) {
@@ -77,8 +77,8 @@ optionImages.forEach((image, index) => {
         userResult.src = cpuImages[userChoice];
         cpuResult.src = cpuImages[cpuChoice];
 
-        animationInProgress = false; // Reset the flag before determining the winner
-        determineWinner(userChoice, cpuChoice);
+        animationInProgress = false;
+        ganador(userChoice, cpuChoice);
 
         gameContainer.classList.remove("start");
       }

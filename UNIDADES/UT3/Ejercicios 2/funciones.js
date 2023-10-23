@@ -11,6 +11,32 @@ function factorial() {
     }
 }
 
+function factorialRecur() {
+    var numFact = document.getElementById("numFactRecur").value;
+    numFact = parseInt(numFact, 10);
+  
+    function factorial(num) {
+      if (num < 0 || num % 1 !== 0) {
+        return null;
+      } else if (num === 0 || num === 1) {
+        return 1;
+      } else {
+        return num * factorial(num - 1);
+      }
+    }
+    if (isNaN(numFact)) {
+      alert("El número introducido no es válido");
+    } else {
+      var resultado = factorial(numFact);
+      if (resultado !== null) {
+        document.getElementById("resultFactRecur").value = resultado;
+      } else {
+        alert("El número introducido no es válido");
+      }
+    }
+  }
+  
+
 function interValor() {
     let num1 = document.getElementById('num1');
     let num2 = document.getElementById('num2');
@@ -33,6 +59,11 @@ function interReferencia() {
     document.getElementById('num2').value = num2Obj.value;
 }
 
+function informacion(nombre, localidad = "LAS PALMAS DE G.C.", valor = 100) {
+    let valores = "";
+    valores = `${nombre}, ${localidad}, ${valor}`;
+    document.getElementById("info").value = valores;
+  }
 
 
   

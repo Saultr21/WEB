@@ -46,7 +46,6 @@ function verificarResultado(answer) {
     }
 }`
                 break;
-            // Agrega más casos según sea necesario para otros ejercicios
             case 'UT3.1_4':
                 demoElement.innerText = 
 `function addNumbers(){

@@ -1,5 +1,5 @@
-let heads = 0;
-let tails = 0;
+let cara = 0;
+let cruz = 0;
 let userWins = 0;
 let userChoice = null;
 
@@ -34,31 +34,29 @@ flipBtn.addEventListener("click", () => {
     coin.style.animation = "none";
     if (i) {
         setTimeout(() => coin.style.animation = "spin-heads 3s forwards", 100);
-        heads++;
+        cara++;
     } else {
         setTimeout(() => coin.style.animation = "spin-tails 3s forwards", 100);
-        tails++;
+        cruz++;
     }
 
     setTimeout(() => {
-        // Check and update the game status after the animation finishes
         if (i && userChoice == "cara" || !i && userChoice == "cruz") {
             userWins++;
             gameStatus.textContent = "¡Ganaste!";
         } else {
             gameStatus.textContent = "Perdiste. ¡Inténtalo de nuevo!";
         }
-        updateStats(); // Update the stats after the animation finishes
+        actualizarScore(); 
     }, 3000);
-
     disableButton();
 });
 
 
-function updateStats(){
-    document.querySelector("#heads-count").textContent = `Cara: ${heads}`;
-    document.querySelector("#tails-count").textContent = `Cruz: ${tails}`;
-    document.querySelector("#user-score").textContent = `Victorias: ${userWins}`;
+function actualizarScore(){
+    document.querySelector("#cara-count").textContent = `Cara: ${cara}`;
+    document.querySelector("#cruz-count").textContent = `Cruz: ${cruz}`;
+    document.querySelector("#usuario-score").textContent = `Victorias: ${userWins}`;
 }
 
 function disableButton(){
@@ -68,11 +66,11 @@ function disableButton(){
 
 resetBtn.addEventListener("click",() => {
     coin.style.animation = "none";
-    heads = 0;
-    tails = 0;
+    cara = 0;
+    cruz = 0;
     userWins = 0;
     userChoice = null; 
-    updateStats();
+    actualizarScore();
 
     caraBtn.classList.remove("btn-selected");
     cruzBtn.classList.remove("btn-selected");
