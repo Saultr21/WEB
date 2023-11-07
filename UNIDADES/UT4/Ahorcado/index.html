@@ -31,44 +31,37 @@
     });
 </script>
   <body>
-    <section class="container border mt-5">
-      <div class="result_field text-center align-content-center pt-5">
-        <span class="mr-5 pr-5">Usuario</span>
-        <span class="ml-5 pl-3">CPU</span>
-        <div class="result_images d-flex justify-content-center mt-5">
-          <span class="user_result">
-            <img src="./media/piedra.png" alt="" />
-          </span>
-          <span class="cpu_result">
-            <img src="./media/piedra.png" alt="" />
-          </span>
-        </div>
-        <div class="result mt-5">Jugar</div>
-        <div class="user_wins mt-5">Victorias del Usuario: <span id="userWinsCount">0</span></div>
-      </div>
+    <!-- Modal HTML estructurado para tu juego de ahorcado -->
+<div id="modalPalabraSecreta" class="modal container">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Introduce la palabra secreta:</p>
+    <input type="password" id="inputPalabraSecreta"><br>
+    <button onclick="establecerPalabraSecreta()">Aceptar</button>
+  </div>
+</div>
 
-      <div class="option_images">
-        <label class="option_image">
-          <input type="radio" name="option" value="rock" />
-          <img src="./media/piedra.png" alt="" />
-          <p>Piedra</p>
-        </label>
-        <label class="option_image">
-          <input type="radio" name="option" value="paper" />
-          <img src="./media/papel.png" alt="" />
-          <p>Papel</p>
-        </label>
-        <label class="option_image">
-          <input type="radio" name="option" value="scissors" />
-          <img src="./media/tijera.png" alt="" />
-          <p>Tijera</p>
-        </label>
-      </div>
-      <div class="d-flex justify-content-center"><button class="btn btn-primary mb-5 reset_btn">Reiniciar Juego</button></div>
+    <section class="container mt-5 text-center">
+<h1>Juego del Ahorcado</h1>
+<div class="mt-5">
+  <button class="btn btn-primary m-2" onclick="iniciarJuego('unJugador')">Un Jugador</button>
+  <button class="btn btn-primary m-2" onclick="iniciarJuego('variosJugadores')">Varios Jugadores</button><br>
+</div>
 
-    </section>
+<div class="m-4" id="palabra"></div>
+<div class="m-4" id="letrasErroneas" class="letra-incorrecta"></div>
 
-   <script src="script.js" defer></script>
-  </body>
+<div class="m-4 " id="letras"></div>
+<div class="m-4" id="estadoJuego"></div>
+<button class="btn btn-primary m-2" onclick="reiniciarJuego()" id="btnReiniciar">Reiniciar Juego</button>
+
+
+</section>
+
+<script src="script.js" defer></script>
+</body>
 </html>
+
+
+
 
