@@ -7,7 +7,7 @@ section button {
 }
 
 #palabra {
-    font-size: 50px;
+    font-size: 2em;
 }
 #letrasErroneas {
     color:red;

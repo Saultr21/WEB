@@ -2,10 +2,10 @@
 let palabraSecreta = '';
 let letrasErroneas = [];
 let aciertos = [];
-let maximoIntentos = 10;
+let maximoIntentos = 6;
 let modoJuego = ''; // 'unJugador' o 'variosJugadores'
 
-// Función para mostrar el modal con el campo de entrada de tipo 'password'
+
 function pedirPalabraSecreta() {
   var modal = document.getElementById("modalPalabraSecreta");
   var span = document.getElementsByClassName("close")[0];
@@ -14,46 +14,45 @@ function pedirPalabraSecreta() {
   modal.style.display = "block";
 
   // Cuando el usuario haga clic en (x), cierra el modal
-  span.onclick = function() {
+  span.onclick = function () {
     modal.style.display = "none";
   }
 
   // Cierra el modal si el usuario hace clic fuera de él
-  window.onclick = function(event) {
+  window.onclick = function (event) {
     if (event.target == modal) {
       modal.style.display = "none";
     }
   }
 }
 
-// Función para establecer la palabra secreta desde el modal
 function establecerPalabraSecreta() {
   var input = document.getElementById("inputPalabraSecreta");
   palabraSecreta = input.value.toUpperCase();
-  
+
   if (!palabraSecreta) {
     alert("No se ingresó ninguna palabra. Intenta de nuevo.");
     reiniciarJuego();
     return;
   }
-  mostrarGuiones(); 
+  mostrarGuiones();
   var modal = document.getElementById("modalPalabraSecreta");
-  modal.style.display = "none"; 
+  modal.style.display = "none";
   generarTeclado();
   document.getElementById('letrasErroneas').textContent = '';
   document.getElementById('estadoJuego').innerHTML = 'Intentos fallidos: ' + letrasErroneas.length + ' de ' + maximoIntentos;
-  
+
 }
 
 
 async function obtenerPalabrasDesdeJson() {
   try {
-    const respuesta = await fetch('palabras.json'); // Asegúrate de que la ruta al archivo JSON sea correcta
+    const respuesta = await fetch('palabras.json');
     const datos = await respuesta.json();
     return datos.palabras;
   } catch (error) {
     console.error('Error al cargar las palabras desde el archivo JSON:', error);
-    return []; // Retornar un array vacío en caso de error
+    return [];
   }
 }
 
@@ -61,9 +60,6 @@ async function iniciarJuego(modo) {
   modoJuego = modo;
   letrasErroneas = [];
   aciertos = [];
-
-  
-  
   if (modo === 'unJugador') {
     // Cargar palabras desde el archivo JSON
     const palabras = await obtenerPalabrasDesdeJson();
@@ -77,8 +73,8 @@ async function iniciarJuego(modo) {
     pedirPalabraSecreta();
 
   }
-
   palabraSecreta = palabraSecreta.toUpperCase();
+  document.getElementById('imagenAhorcado').src = 'media/0.png';
   mostrarGuiones();
 }
 
@@ -99,7 +95,9 @@ function reiniciarJuego() {
   document.getElementById('palabra').textContent = '';
   document.getElementById('letrasErroneas').textContent = '';
   document.getElementById('estadoJuego').textContent = '';
-  document.getElementById('letras').innerHTML = ''; 
+  document.getElementById('letras').innerHTML = '';
+  var imagenAhorcado = document.getElementById('imagenAhorcado');
+  if (imagenAhorcado) imagenAhorcado.src = '';
 }
 
 
@@ -124,23 +122,32 @@ function seleccionarLetra(letra) {
     if (!letrasErroneas.includes(letra)) {
       letrasErroneas.push(letra);
       document.getElementById('letrasErroneas').textContent = letrasErroneas.join(' ');
+      actualizarImagenAhorcado(letrasErroneas.length);
     }
   }
-  
+
   document.getElementById('estadoJuego').innerHTML = 'Intentos fallidos: ' + letrasErroneas.length + ' de ' + maximoIntentos;
   mostrarGuiones();
   verificarFinJuego();
 }
 
+function actualizarImagenAhorcado(numeroErrores) {
+  if (numeroErrores <= maximoIntentos) {
+    var imagenAhorcado = document.getElementById('imagenAhorcado');
+    var nuevoSrc = `media/${numeroErrores}.png`;
+    imagenAhorcado.src = nuevoSrc;
+  }
+}
+
 function verificarFinJuego() {
   let ganado = palabraSecreta.split('').every(letra => aciertos.includes(letra));
   if (ganado) {
-    setTimeout(function() {
+    setTimeout(function () {
       alert('¡Has ganado!');
       deshabilitarTeclado();
     }, 100); // Retraso de 100 milisegundos
   } else if (letrasErroneas.length >= maximoIntentos) {
-    setTimeout(function() {
+    setTimeout(function () {
       alert('¡Has perdido! La palabra era: ' + palabraSecreta);
       deshabilitarTeclado();
     }, 100);
