@@ -1,0 +1,7 @@
+.texto {
+display: grid;
+justify-content: center; 
+  }
+  button{
+    margin-bottom: 100px;
+  }

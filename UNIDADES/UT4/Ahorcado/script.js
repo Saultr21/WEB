@@ -7,18 +7,18 @@ let modoJuego = ''; // 'unJugador' o 'variosJugadores'
 
 
 function pedirPalabraSecreta() {
-  var modal = document.getElementById("modalPalabraSecreta");
-  var span = document.getElementsByClassName("close")[0];
+  let modal = document.getElementById("modalPalabraSecreta");
+  let span = document.getElementsByClassName("close")[0];
 
-  // Muestra el modal
+ 
   modal.style.display = "block";
 
-  // Cuando el usuario haga clic en (x), cierra el modal
+
   span.onclick = function () {
     modal.style.display = "none";
   }
 
-  // Cierra el modal si el usuario hace clic fuera de él
+
   window.onclick = function (event) {
     if (event.target == modal) {
       modal.style.display = "none";
@@ -27,7 +27,7 @@ function pedirPalabraSecreta() {
 }
 
 function establecerPalabraSecreta() {
-  var input = document.getElementById("inputPalabraSecreta");
+  let input = document.getElementById("inputPalabraSecreta");
   palabraSecreta = input.value.toUpperCase();
 
   if (!palabraSecreta) {
@@ -36,7 +36,7 @@ function establecerPalabraSecreta() {
     return;
   }
   mostrarGuiones();
-  var modal = document.getElementById("modalPalabraSecreta");
+  let modal = document.getElementById("modalPalabraSecreta");
   modal.style.display = "none";
   generarTeclado();
   document.getElementById('letrasErroneas').textContent = '';
@@ -61,7 +61,7 @@ async function iniciarJuego(modo) {
   letrasErroneas = [];
   aciertos = [];
   if (modo === 'unJugador') {
-    // Cargar palabras desde el archivo JSON
+
     const palabras = await obtenerPalabrasDesdeJson();
     let indiceAleatorio = Math.floor(Math.random() * palabras.length);
     palabraSecreta = palabras[indiceAleatorio];
@@ -69,7 +69,7 @@ async function iniciarJuego(modo) {
     document.getElementById('letrasErroneas').textContent = '';
     document.getElementById('estadoJuego').innerHTML = 'Intentos fallidos: ' + letrasErroneas.length + ' de ' + maximoIntentos;
   } else {
-    // Pedir que se ingrese una palabra
+
     pedirPalabraSecreta();
 
   }
@@ -133,8 +133,8 @@ function seleccionarLetra(letra) {
 
 function actualizarImagenAhorcado(numeroErrores) {
   if (numeroErrores <= maximoIntentos) {
-    var imagenAhorcado = document.getElementById('imagenAhorcado');
-    var nuevoSrc = `media/${numeroErrores}.png`;
+    let imagenAhorcado = document.getElementById('imagenAhorcado');
+    let nuevoSrc = `media/${numeroErrores}.png`;
     imagenAhorcado.src = nuevoSrc;
   }
 }
@@ -145,7 +145,7 @@ function verificarFinJuego() {
     setTimeout(function () {
       alert('¡Has ganado!');
       deshabilitarTeclado();
-    }, 100); // Retraso de 100 milisegundos
+    }, 100); 
   } else if (letrasErroneas.length >= maximoIntentos) {
     setTimeout(function () {
       alert('¡Has perdido! La palabra era: ' + palabraSecreta);

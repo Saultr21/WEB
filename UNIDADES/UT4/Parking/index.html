@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Parking</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="/CSS/estilos.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script src="script.js" defer></script>
+    </head>
+    <div id="header-container"></div>
+    <script>
+        // Cargar el encabezado usando JavaScript
+        const headerContainer = document.getElementById("header-container");
+        const headerURL = "/Partes/header.html";
+        fetch(headerURL)
+            .then(response => response.text())
+            .then(data => {
+                headerContainer.innerHTML = data;
+            });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center mb-5 mt-3">Parking EL RINCÓN</h1>
+<div class="datos">
+        <label for="fechayhora">Entrada:</label>
+        <input type="datetime-local" id="fechayhora" name="fechayhora"><br>
+
+        <label id="currentLabel" for="fechaActual">Fecha y hora actual:</label>
+        <span id="fechaActual"></span><br>
+
+
+
+        <label for="precio">Precio:</label>
+        <input type="text" id="precio" name="precio" readonly disabled><br>
+        <div class="text-center">
+            <button  onclick="calcularPrecio()">Calcular precio</button>
+        </div>
+    </div>
+    <script>
+
+        actualizarHora();
+    </script>
+
+</body>
+
+</html>

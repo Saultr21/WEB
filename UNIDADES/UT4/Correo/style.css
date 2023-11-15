@@ -1,0 +1,9 @@
+.contenido {
+    display: grid;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+form {
+    text-align: center;
+  }
