@@ -6,7 +6,7 @@ input {
     border-radius: 5px;
     border-style: none;
 }
-.btn{
+ .botones button{
     min-width: 140px;
     margin-bottom: 5px;
 }
