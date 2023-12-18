@@ -21,12 +21,12 @@ select {
     padding: 0;
 }
 
-/* Estilo para los elementos de la lista */
 #listaDatos li {
     cursor: pointer;
     padding: 5px;
     background-color: #f9f9f9;
     margin-bottom: 4px;
+    border-radius: 2px;
 }
 
 #listaDatos li:hover {
@@ -35,7 +35,6 @@ select {
 
 #listaDatos li.seleccionado {
     background-color: #c7eecf;
-    /* Cambia el color de fondo a tu preferencia */
     border: solid 1px rgb(76, 121, 93);
 }
 

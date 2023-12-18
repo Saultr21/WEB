@@ -50,10 +50,12 @@ function visualizarDatosSeleccionado() {
      `;
         alert(mensaje);
     }
+    // Si no hay datos 
     else if (datos.length === 0) {
         alert('No hay datos para visualizar.');
         return;
     }
+    // Si no hay una línea seleccionada
     else {
         alert("Selecciona una línea para visualizar.");
     }
@@ -71,10 +73,12 @@ function eliminar() {
         // Actualizar la lista de datos
         actualizarLista();
     }
+    // Si no hay datos
     else if (datos.length === 0) {
         alert('No hay datos para eliminar.');
         return;
     }
+    // Si no hay una línea seleccionada
     else {
         alert('Selecciona una línea para eliminar.');
     }
