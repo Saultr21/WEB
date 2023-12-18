@@ -17,14 +17,8 @@ function agregarElemento() {
 function mostrarVector() {
 
     document.getElementById("vectorDesordenado").innerText = JSON.stringify(vector);
-
-
     let vectorOrdenado = [...vector].sort(comparar);
-
-
     document.getElementById("vectorOrdenado").innerText = JSON.stringify(vectorOrdenado);
-
-
     let elementosReves = vectorOrdenado.map(elemento => elemento.toString().split('').reverse().join(''));
     document.getElementById("elementosReves").innerText = JSON.stringify(elementosReves);
 }

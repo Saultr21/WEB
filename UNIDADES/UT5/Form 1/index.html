@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario 1</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/CSS/estilos.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <form onsubmit="agregar(event); return false;">
+        <div class="container border d-flex" id="form-container">
+            <div class="container border form-section">
+                <h2>Datos personales</h2>
+                <label for="apellidos">Apellidos:</label><br>
+                <input type="text" id="apellidos" required><br>
+
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" required><br>
+                <br>
+                <label for="sexo">Sexo:</label><br>
+                <label><input type="radio" name="sexo" value="hombre" required> Hombre</label><br>
+                <label><input type="radio" name="sexo" value="mujer"> Mujer</label><br>
+
+                <label for="email">Correo electrónico:</label><br>
+                <input type="email" id="email" required><br><br>
+            </div>
+
+            <div class="container border form-section">
+                <h2>Información</h2>
+                <label for="llegada">¿Cómo llegó hasta aquí?</label><br>
+                <select id="llegada" required>
+                    <option value="azar">Al azar</option>
+                    <option value="url">Le indicaron la URL de la página</option>
+                    <option value="buscador" selected>A través de un buscador</option>
+                    <option value="enlace">Mediante un enlace desde otra página</option>
+                </select><br>
+
+                <label for="interes">¿Desearía más información sobre?</label><br>
+                <label><input type="checkbox" id="audiovisual" value="Material audiovisual"> Material
+                    audiovisual</label><br>
+                <label><input type="checkbox" id="textos" value="Textos electrónicos"> Textos electrónicos</label><br>
+                <label><input type="checkbox" id="libros" value="Libros de texto"> Libros de texto</label><br>
+            </div>
+        </div>
+
+        <div class="container border form-section d-flex justify-content-center text-center align-content-center align-items-center flex-column">
+            <div>
+                <h2>Acciones</h2>
+            </div>
+            <div>
+                <!-- Lista de datos -->
+                <ul id="listaDatos"></ul>
+            </div>
+            <div>
+                <button type="submit">Añadir</button>
+                <button onclick="visualizarDatosSeleccionado()">Visualizar Datos</button>
+                <button onclick="eliminar()">Eliminar</button>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+#listaDatos {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Estilo para los elementos de la lista */
+#listaDatos li {
+    cursor: pointer;
+    padding: 5px;
+    background-color: #f9f9f9;
+}
+
+#listaDatos li:hover {
+    background-color: #e0e0e0;
+}
+
+#listaDatos li.seleccionado {
+    background-color: #c7ecee; /* Cambia el color de fondo a tu preferencia */
+    border:solid 1px black;
+}
