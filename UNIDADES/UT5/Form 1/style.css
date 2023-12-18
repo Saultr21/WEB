@@ -1,3 +1,20 @@
+label {
+    color:black;
+    font-weight: 600;
+}
+input {
+    border-radius: 5px;
+    border-style: none;
+}
+.btn{
+    min-width: 140px;
+    margin-bottom: 5px;
+}
+select {
+    border-radius: 5px;
+    border-style: none;
+}
+
 #listaDatos {
     display: none;
     list-style-type: none;
@@ -9,6 +26,7 @@
     cursor: pointer;
     padding: 5px;
     background-color: #f9f9f9;
+    margin-bottom: 4px;
 }
 
 #listaDatos li:hover {
@@ -16,6 +34,18 @@
 }
 
 #listaDatos li.seleccionado {
-    background-color: #c7ecee; /* Cambia el color de fondo a tu preferencia */
-    border:solid 1px black;
+    background-color: #c7eecf;
+    /* Cambia el color de fondo a tu preferencia */
+    border: solid 1px rgb(76, 121, 93);
+}
+
+.seccion {
+    border:solid black 1px;
+    border-radius: 5px;
+}
+
+
+.checkboxs label {
+    font-weight: none;
+    
 }

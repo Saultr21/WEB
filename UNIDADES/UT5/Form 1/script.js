@@ -9,47 +9,54 @@ function agregar(event) {
     const email = document.getElementById('email').value;
     const llegada = document.getElementById('llegada').value;
 
- // Obtener valores de los checkboxes
- const audiovisual = document.getElementById('audiovisual').checked ? "Material audiovisual" : "";
- const textos = document.getElementById('textos').checked ? "Textos electrónicos" : "";
- const libros = document.getElementById('libros').checked ? "Libros de texto" : "";
+    // Obtener valores de los checkboxes
+    const audiovisual = document.getElementById('audiovisual').checked ? "Material audiovisual" : "";
+    const textos = document.getElementById('textos').checked ? "Textos electrónicos" : "";
+    const libros = document.getElementById('libros').checked ? "Libros de texto" : "";
 
- // Filtrar los intereses seleccionados
- const intereses = [audiovisual, textos, libros].filter(interes => interes !== "");
+    // Filtrar los intereses seleccionados
+    const intereses = [audiovisual, textos, libros].filter(interes => interes !== "");
 
- // Crear un objeto con todos los datos
- const nuevaLinea = {
-     apellidos,
-     nombre,
-     sexo,
-     email,
-     llegada,
-     intereses,
- };
+    // Crear un objeto con todos los datos
+    const nuevaLinea = {
+        apellidos,
+        nombre,
+        sexo,
+        email,
+        llegada,
+        intereses: intereses.length > 0 ? intereses : ["Ninguno"]
+    };
 
- // Añadir el objeto al array
- datos.push(nuevaLinea);
+    // Añadir el objeto al array
+    datos.push(nuevaLinea);
 
- // Actualizar la lista de datos
- actualizarLista();
+    // Actualizar la lista de datos
+    actualizarLista();
+    // Resetear formulario
+    document.getElementById("formulario").reset();
 }
 
 function visualizarDatosSeleccionado() {
- // Mostrar la información completa en un alert solo si hay una línea seleccionada
- if (indiceSeleccionado !== -1) {
-     const lineaSeleccionada = datos[indiceSeleccionado];
-     const mensaje = `
-         Apellidos: ${lineaSeleccionada.apellidos}
+    // Mostrar la información completa en un alert solo si hay una línea seleccionada
+    if (indiceSeleccionado !== -1) {
+        const lineaSeleccionada = datos[indiceSeleccionado];
+        const mensaje = `
          Nombre: ${lineaSeleccionada.nombre}
+         Apellidos: ${lineaSeleccionada.apellidos}
          Sexo: ${lineaSeleccionada.sexo}
          Email: ${lineaSeleccionada.email}
          Cómo llegó hasta aquí: ${lineaSeleccionada.llegada}
          Intereses: ${lineaSeleccionada.intereses.join(", ")}
      `;
-     alert(mensaje);
- } else {
-     alert("Selecciona una línea para visualizar.");
- }
+        alert(mensaje);
+    }
+    else if (datos.length === 0) {
+        alert('No hay datos para visualizar.');
+        return;
+    }
+    else {
+        alert("Selecciona una línea para visualizar.");
+    }
 }
 
 function eliminar() {
@@ -63,7 +70,12 @@ function eliminar() {
 
         // Actualizar la lista de datos
         actualizarLista();
-    } else {
+    }
+    else if (datos.length === 0) {
+        alert('No hay datos para eliminar.');
+        return;
+    }
+    else {
         alert('Selecciona una línea para eliminar.');
     }
 }
@@ -102,9 +114,6 @@ function seleccionar(index) {
         // Actualizar el índice seleccionado
         indiceSeleccionado = index;
     }
-
     // Actualizar la lista
     actualizarLista();
-
-    // También podrías hacer otras acciones al seleccionar un elemento si lo deseas
 }
