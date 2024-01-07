@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('myForm').addEventListener('submit', function (event) {
+    document.getElementById('form').addEventListener('submit', function (event) {
         event.preventDefault();
 
         if (!validateNombre()) {
