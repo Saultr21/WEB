@@ -1,0 +1,8 @@
+<h1>Contenedor izquierdo</h1>
+<div id="left-content"></div>
+<script>
+    window.addEventListener('message', function (event) {
+        let texto = event.data;
+        document.getElementById('left-content').innerText = texto;
+    });
+</script>

@@ -1,0 +1,12 @@
+<h1>Contenedor derecho</h1>
+<div id="right-content" style=" position: absolute;"></div>
+<script src="script.js" defer></script>
+<button class="btn btn-info mt-5" style="margin-top:200px; " onclick="mostrarNombresContenedores()">COMO SE LLAMAN LOS
+    MARCOS</button>
+
+<script>
+    window.addEventListener('message', function (event) {
+        let texto = event.data;
+        document.getElementById('right-content').innerText = texto;
+    });
+</script>
