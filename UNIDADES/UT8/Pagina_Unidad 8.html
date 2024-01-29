@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>DEW</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="/CSS/estilos.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="funciones.js"></script>
+</head>
+
+<div id="header-container"></div>
+<script>
+  // Cargar el encabezado usando JavaScript
+  const headerContainer = document.getElementById("header-container");
+  const headerURL = "/Partes/header.html";
+  fetch(headerURL)
+    .then(response => response.text())
+    .then(data => {
+      headerContainer.innerHTML = data;
+    });
+</script>
+<main class="container mt-4">
+  <section id="seccion1" class="card mb-4 tarjeta">
+    <div class="card-body">
+      <h2 class="card-title">Colores RGB</h2>
+      <p class="card-text">La página coloresRGB.htm dispone de los tres hiperenlaces que 
+        se ven en la figura. El primero lanzará un popup con la página 
+        SelectorColoresRGB.htm también mostrada en la figura. 
+        La lista (select) permite seleccionar los atributos bgColor, 
+        fgColor, LinkColor, aLinkColor y vLinkColor y en los tres cuadros de 
+        texto (input type=”text”) se introducirán las proporciones de rojo, 
+        azul y verde para el color del atributo seleccionado en el paso 
+        anterior. 
+        El programa deberá controlar que los valores introducidos están 
+        entre 0 y 255, posteriormente convertirlos a hexadecimal y 
+        finalmente cambiar el color del atributo seleccionado en la ventana 
+        ColoresRGB.htm
+        
+       
+      </p>
+      <a href="/UNIDADES/UT8/1/index.html" target="_blank"
+        class="btn btn-primary float-right">Abrir ejercicio</a>
+
+
+    </div>
+  </section>
+  <section id="seccion2" class="card mb-4 tarjeta">
+    <div class="card-body">
+      <h2 class="card-title">Roll Over</h2>
+      <p class="card-text"></p>Diseñar la web de la figura con las dos imágenes primarias 
+      mostradas. Al pasar el ratón sobre la imagen superior se sustituyen 
+      ambas por las secundarias también mostradas en la figura. Al retirar 
+      el ratón se volverá a la situación original. Si pulsamos sobre la 
+      imagen secundaria superior se cerrará la ventana.
+      <br>
+      <a href="/UNIDADES/UT8/2/index.html" target="_blank"
+        class="btn btn-primary float-right mt-2">Abrir ejercicio</a>
+    </div>
+  </section>
+  <section id="seccion3" class="card mb-4 tarjeta">
+    <div class="card-body">
+      <h2 class="card-title">Contador de visitas</h2>
+      <p class="card-text"></p>En la web de la figura está incluido el archivo Cookies.js con una 
+      función para grabar una cookie, otra para leerla y finalmente otra 
+      para borrar la cookie demandada. 
+      El programa comprobará si existe la cookie Contador_Visitas2 y 
+      leerá su valor. Si no existe presentará el mensaje “Bienvenido a la 
+      página de las cookies” y en caso contrario “Esta es su visita nº n”. El 
+      valor de n se incrementará en cada visita. 
+      Al pulsar el botón BORRAR COOKIE se eliminará la cookie del 
+      ordenador de usuario.
+      <br>
+      <a href="/UNIDADES/UT8/3/index.html" target="_blank"
+        class="btn btn-primary float-right">Abrir ejercicio</a>
+    </div>
+  </section>
+</main>
+<button class="material-icons" id="btn-regresar-arriba">&#8593</button>
+<script>  const btnRegresarArriba = document.getElementById("btn-regresar-arriba");
+  window.addEventListener("scroll", function () {
+    if (window.pageYOffset > 100) {
+      btnRegresarArriba.classList.add("show");
+    } else {
+      btnRegresarArriba.classList.remove("show");
+    }
+  });
+  btnRegresarArriba.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });</script>
+
+
+</body>
+
+</html>

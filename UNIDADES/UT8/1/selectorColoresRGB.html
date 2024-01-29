@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selector de Colores RGB</title>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <h1>Selector de Colores RGB</h1>
+  
+  <label for="atributoSelect">Selecciona el atributo:</label>
+  <select id="atributoSelect">
+    <option value="backgroundColor">Background Color</option>
+    <option value="color">Foreground Color</option>
+    <option value="a">Link Color</option>
+    <option value="a:active">Active Link Color</option>
+    <option value="a:visited">Visited Link Color</option>
+  </select>
+  
+  <br>
+  
+  <label for="rojoInput">Rojo:</label>
+  <input type="text" id="rojoInput">
+  
+  <label for="verdeInput">Verde:</label>
+  <input type="text" id="verdeInput">
+  
+  <label for="azulInput">Azul:</label>
+  <input type="text" id="azulInput">
+  
+  <br>
+  
+  <button onclick="cambiarColor();">Cambiar Color</button>
+
+</body>
+</html>
