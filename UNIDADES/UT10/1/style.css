@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu {
+    position: relative;
+    display: flex;
+  }
+  
+  .menu a {
+    flex: 1;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .menu img {
+    width: 60%; 
+    height: auto; 
+  }
+  
+  .menu span {
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    font-size: 1em;
+    font-weight: bold;
+  }
+  
+  
