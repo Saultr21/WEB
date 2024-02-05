@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cookies</title>
+    <title>Colecciones</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -32,27 +32,20 @@
             headerContainer.innerHTML = data;
         });
 </script>
-<body>
-    <div class="container text-center mt-5">
-  <h1>Gestión de Cookies</h1>
-  
-  <div id="mensaje"></div>
-  
-  <button onclick="borrarCookie('Contador_Visitas2')">BORRAR COOKIE</button>
-</div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      let contadorVisitas = leerCookie('Contador_Visitas2');
-      
-      if (contadorVisitas === null) {
-        document.getElementById('mensaje').innerHTML = 'Bienvenido a la página de las cookies';
-        grabarCookie('Contador_Visitas2', 1, 365); // Inicializa el contador si no existe la cookie
-      } else {
-        document.getElementById('mensaje').innerHTML = 'Esta es su visita nº ' + contadorVisitas;
-        grabarCookie('Contador_Visitas2', parseInt(contadorVisitas) + 1, 365); // Incrementa el contador si la cookie existe
-      }
-    });
 
-  </script>
+<body>
+    <div class="container mt-5">
+        <div class="marquesina" id="marquesina">
+            ¡Queremos que compre!
+          </div>
+        
+          <div class="productos">
+            <p id="productoA" onmouseover="mostrarTexto('Este producto es el mejor de la línea')" onmouseout="restaurarTexto()">Producto A</p>
+            <p id="productoB" onmouseover="mostrarTexto('Este producto es de la mejor calidad')" onmouseout="restaurarTexto()">Producto B</p>
+            <p id="productoC" onmouseover="mostrarTexto('Este producto es barato, barato, barato')" onmouseout="restaurarTexto()">Producto C</p>
+          </div>
+        
+    </div>
 </body>
+
 </html>
