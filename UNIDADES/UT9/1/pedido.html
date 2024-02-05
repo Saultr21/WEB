@@ -1,0 +1,55 @@
+<!-- factura.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factura</title>
+</head>
+<body>
+  <h1>Factura</h1>
+
+  <div id="detalleFactura"></div>
+
+  <script>
+    // Recuperar el pedido desde la cookie
+    const cookieArray = document.cookie.split(';');
+    const pedidoCookie = cookieArray.find(cookie => cookie.includes('pedido'));
+
+    if (pedidoCookie) {
+      const pedidoJSON = pedidoCookie.split('=')[1];
+      const pedido = JSON.parse(pedidoJSON);
+      const detalleFactura = document.getElementById('detalleFactura');
+
+      // Mostrar el detalle de la factura
+      let totalPedido = 0;
+
+      pedido.forEach(articulo => {
+        const subtotal = articulo.precio * articulo.cantidad;
+        totalPedido += subtotal;
+
+        const detalleProducto = document.createElement('div');
+
+        detalleProducto.innerHTML = `
+          <img src="${articulo.imagen}">
+          <p>${articulo.descripcion} - Unidades: ${articulo.cantidad}</p>
+          <p>Precio unitario: $${articulo.precio} - Subtotal: $${subtotal.toFixed(2)}</p>
+          <hr>
+        `;
+
+        detalleFactura.appendChild(detalleProducto);
+      });
+
+      // Mostrar el total del pedido
+      const totalElement = document.createElement('p');
+      totalElement.textContent = `Total del pedido: $${totalPedido.toFixed(2)}`;
+      detalleFactura.appendChild(totalElement);
+    } else {
+      // No hay pedido almacenado en la cookie
+      document.getElementById('detalleFactura').textContent = 'No hay productos en la factura.';
+    }
+  </script>
+</body>
+</html>
+
+
